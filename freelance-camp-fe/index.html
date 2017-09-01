@@ -13,8 +13,13 @@
       System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
+  <style>
+    #loadingpic {
+      margin-top: 25vh;
+    }
+  </style>
 
   <body>
-    <main-app>App Loading...</main-app>
+    <main-app><center><img id="loadingpic" src="loading.gif"></center></main-app>
   </body>
 </html>
