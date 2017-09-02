@@ -13,7 +13,7 @@ var HomepageComponent = /** @class */ (function () {
     HomepageComponent = __decorate([
         core_1.Component({
             selector: 'main-app',
-            template: '<h1>Sam\'s Angular App'
+            template: '<h1>Sam\'s Angular App',
         })
     ], HomepageComponent);
     return HomepageComponent;
