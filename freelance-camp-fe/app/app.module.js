@@ -12,6 +12,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var homepage_component_1 = require("./homepage/homepage.component");
 var app_component_1 = require("./app.component");
 var documents_component_1 = require("./documents/documents.component");
+var proposal_list_component_1 = require("./proposal/proposal-list.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 homepage_component_1.HomepageComponent,
-                documents_component_1.DocumentsComponent
+                documents_component_1.DocumentsComponent,
+                proposal_list_component_1.ProposalListComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
