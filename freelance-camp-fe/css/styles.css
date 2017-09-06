@@ -1,0 +1,21 @@
+body {
+  background-color: #252830;
+}
+
+#loadingpic {
+  margin-top: 25vh;
+}
+
+.progress {
+  margin-top: 50vh;
+  width: 30%;
+}
+
+.progress {
+  margin-top: 50vh;
+  width: 30%;
+}
+
+.progress-bar-striped {
+  background-color: #ff4d4d;
+}
