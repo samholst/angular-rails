@@ -16,9 +16,9 @@ body {
   background-color: #ff4d4d;
 }
 
-.navbar-nav, .nav-item {
+/*.navbar-nav, .nav-item {
   display: inline-block;
-}
+}*/
 
 .card {
   margin-bottom: 15px;
