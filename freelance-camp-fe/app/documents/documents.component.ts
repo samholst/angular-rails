@@ -1,36 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
+import { DocumentService } from './document.service';
 
 @Component({
   moduleId: module.id,
   selector: 'documents',
   templateUrl: 'documents.component.html',
-  styleUrls: ['documents.component.css']
+  styleUrls: ['documents.component.css'],
+  providers: [ DocumentService ]
 })
-export class DocumentsComponent {
+export class DocumentsComponent implements OnInit {
   pageTitle: string = "Document Dashboard"
+  documents: Document[];
+  errorMessage: string;
+  mode = "Observable";
 
-  documents: Document[] = [
-    {
-      title: "My First Doc",
-      description: "I love angular 4!!!!!!!!",
-      file_url: "https://www.google.com",
-      updated_at: "2017-09-04",
-      image_url: "http://images.all-free-download.com/images/graphiclarge/book_tunnel_192352.jpg"
-    },
-    {
-      title: "My Second Doc",
-      description: "I love angular 4!!!!!!!!",
-      file_url: "https://www.google.com",
-      updated_at: "2017-09-04",
-      image_url: "http://images.all-free-download.com/images/graphiclarge/book_tunnel_192352.jpg"
-    },
-    {
-      title: "My Last Doc",
-      description: "I love angular 4!!!!!!!!",
-      file_url: "https://www.google.com",
-      updated_at: "2017-09-04",
-      image_url: "http://images.all-free-download.com/images/graphiclarge/book_tunnel_192352.jpg"
-    }
-  ]
+  constructor(
+    private documentService: DocumentService
+  ) {}
+
+  ngOnInit() {
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getDocuments());
+  }
+
+  getDocuments() {
+    // dependency injection here
+    this.documentService.getDocuments()
+        .subscribe(
+          documents => this.documents = documents,
+          error => this.errorMessage = <any>error
+        );
+  }
 }
+
+
+
+
+// http://images.all-free-download.com/images/graphiclarge/book_tunnel_192352.jpg
