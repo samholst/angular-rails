@@ -16,3 +16,8 @@
 .alert-danger {
   margin-top: 3px;
 }
+
+.btn-outline-info {
+  display: flex;
+  justify-content: center;
+}

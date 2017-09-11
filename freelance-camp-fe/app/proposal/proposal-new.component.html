@@ -3,7 +3,7 @@
 
   <div class="row new-proposal-row">
     <div class="col-md-5 card new-card-style">
-      <form #proposalFrom='ngForm'>
+      <form #proposalForm='ngForm'>
         <div class="form-group">
           <label for="customer">Customer Name</label>
           <input type="text"
@@ -110,6 +110,14 @@
                  [(ngModel)]="proposal.client_email"
           >
         </div>
+
+        <button type="submit"
+                class="btn btn-outline-primary btn-lg"
+                [disabled]="!proposalForm.form.valid"
+                [hidden]="submitted"
+                >
+          Generate Proposal
+        </button>
 
       </form>
     </div>
